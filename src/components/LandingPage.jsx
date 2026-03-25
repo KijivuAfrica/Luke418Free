@@ -85,7 +85,7 @@ export default function LandingPage({ onSuccess }) {
       {/* NAV */}
       <nav className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-4 md:px-12">
         <img
-          src="/logo.png"
+          src="/luke418_logo_1000x1000.png"
           alt="Luke 4:18 Free Indeed"
           className="h-14 w-14 object-contain"
         />
@@ -295,7 +295,7 @@ export default function LandingPage({ onSuccess }) {
       {/* FOOTER */}
       <footer className="bg-ink-900 py-10 px-6 text-center">
         <img
-          src="/logo.png"
+          src="/luke418_logo_1000x1000.png"
           alt="Luke 4:18 Free Indeed"
           className="h-16 w-16 object-contain mx-auto mb-4 opacity-90"
         />
