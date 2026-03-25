@@ -3,7 +3,7 @@ export default function ThankYouPage() {
     <div className="min-h-screen bg-ink-900 flex items-center justify-center px-6">
       <div className="max-w-lg mx-auto text-center">
         <img
-          src="/luke418_logo_1000x1000.png"
+          src="/luke418_logo_v4.svg"
           alt="Luke 4:18 Free Indeed"
           className="h-20 w-20 object-contain mx-auto mb-8 opacity-90"
         />
