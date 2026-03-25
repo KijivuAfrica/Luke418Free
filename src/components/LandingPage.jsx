@@ -6,19 +6,19 @@ const KLAVIYO_LIST_ID = import.meta.env.VITE_KLAVIYO_LIST_ID || ''
 const faqs = [
   {
     q: 'What should I do right after losing my job?',
-    a: 'Give yourself permission to feel the loss. Job loss is a grief — and rushing past it rarely helps. The Waiting Room is designed to help you process the emotions, ground yourself in scripture, and listen for what God is saying before you rush into action.',
+    a: 'Feel it first. Seriously. Job loss is a real loss and skipping over that part just makes things worse later. The Waiting Room gives you a way to sit with it, bring it to God, and actually process before jumping into fix-it mode.',
   },
   {
     q: "How do I trust God when I'm unemployed and scared?",
-    a: 'Fear during unemployment is completely normal. This journal uses guided prompts and scripture to help you bring your fear honestly to God — and practice trusting Him one day at a time.',
+    a: "Fear is normal. This journal doesn't pretend otherwise. The prompts are honest enough to let you say what you're actually feeling to God, not just the cleaned-up version. That's where trust gets built.",
   },
   {
     q: 'Is there a Christian journal specifically for unemployment?',
-    a: 'Yes — The Waiting Room is written specifically for people working through job loss. Each day includes a scripture, guided reflection prompts, and open space to write and pray. The first 3 days are completely free.',
+    a: 'Yes. It was written specifically for people going through unemployment. Each day has a scripture, some questions, and open space to write and pray. The first 3 days are free.',
   },
   {
     q: 'Can God really speak to me during a season of unemployment?',
-    a: 'Absolutely. In Luke 4:18, Jesus announces freedom for the oppressed and good news for the poor — and unemployment can feel like both. The Waiting Room is built on the belief that the season of waiting is also a season of hearing. God is still speaking.',
+    a: "Yes. Luke 4:18 says Jesus came to bring good news to the poor and freedom to the oppressed. Unemployment can hit both of those. God hasn't gone quiet just because your situation feels loud. The journal helps you slow down enough to actually hear Him.",
   },
 ]
 
@@ -115,7 +115,7 @@ export default function LandingPage({ onSuccess }) {
   return (
     <div className="min-h-screen font-sans bg-cream-50">
 
-      {/* ── NAV ── */}
+      {/* NAV */}
       <nav className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-4 md:px-12">
         <img src="/luke418_logo_v4.svg" alt="Luke 4:18 Free Indeed" className="h-14 w-14 object-contain" />
         <a
@@ -124,11 +124,11 @@ export default function LandingPage({ onSuccess }) {
           rel="noopener noreferrer"
           className="text-sm font-medium text-gold-300 hover:text-gold-400 transition-colors border border-gold-500/40 rounded-full px-4 py-1.5"
         >
-          Get Full Book →
+          Get Full Book
         </a>
       </nav>
 
-      {/* ── HERO ── */}
+      {/* HERO */}
       <section
         aria-label="Free 3-day journal offer"
         className="relative min-h-screen flex items-center justify-center bg-ink-900 overflow-hidden px-6 py-28"
@@ -139,19 +139,17 @@ export default function LandingPage({ onSuccess }) {
 
         <div className="relative max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
 
-          {/* Book cover */}
           <div className="flex justify-center order-2 md:order-1">
             <div className="relative">
               <div className="absolute -inset-4 rounded-2xl bg-gold-500/10 blur-2xl" />
               <img
                 src="/waiting_room_last_frame_v2.jpg"
-                alt="The Waiting Room — A Journal for People Working Through Unemployment"
+                alt="The Waiting Room journal"
                 className="relative w-64 md:w-72 rounded-xl shadow-2xl border border-gold-600/20 object-cover"
               />
             </div>
           </div>
 
-          {/* Text + form */}
           <div className="order-1 md:order-2 text-center md:text-left">
             <p className="text-gold-500 text-xs font-semibold uppercase tracking-[0.25em] mb-5">
               Free 3-Day Journal
@@ -162,9 +160,9 @@ export default function LandingPage({ onSuccess }) {
               Just your paycheck.
             </h1>
             <p className="text-stone-300 text-base md:text-lg leading-relaxed mb-8">
-              Unemployment can feel like a wilderness — but God is still speaking.
-              Get 3 free days of <span className="text-gold-300 font-medium">The Waiting Room</span>,
-              a scripture-based journal for people working through job loss who want to hear from God.
+              If you just lost your job, or you've been in the waiting longer than you expected,
+              this journal was made for you. 3 free days. Just you, a pen,
+              and whatever God wants to say.
             </p>
 
             <form
@@ -198,7 +196,7 @@ export default function LandingPage({ onSuccess }) {
                 disabled={loading}
                 className="w-full py-4 bg-gold-500 hover:bg-gold-400 disabled:opacity-60 disabled:cursor-not-allowed text-ink-900 font-bold rounded-xl transition-all text-sm tracking-widest uppercase"
               >
-                {loading ? 'Sending...' : 'Get Free Access — 3 Days Free'}
+                {loading ? 'Sending...' : 'Get Free Access'}
               </button>
               <p className="text-stone-500 text-xs mt-3 text-center">
                 No spam. Just 3 days of hope. Unsubscribe anytime.
@@ -208,32 +206,32 @@ export default function LandingPage({ onSuccess }) {
         </div>
       </section>
 
-      {/* ── WHAT'S INSIDE ── */}
+      {/* WHAT'S INSIDE */}
       <section aria-label="What's inside the free journal" className="bg-cream-100 py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-ink-900 text-center mb-4">
-            What's inside your free 3 days
+            What's inside the free 3 days
           </h2>
           <p className="text-stone-500 text-center mb-12 max-w-lg mx-auto">
-            Research shows that expressive writing during hardship reduces anxiety and builds
-            clarity. Each day pairs that science with scripture — 10 minutes that can shift everything.
+            Writing things out when life is hard actually works. Science backs it up and scripture
+            grounds it. Ten minutes a day is all it asks.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 icon: '📖',
                 title: 'Daily Scripture',
-                desc: "Grounding verses that speak directly into the experience of unemployment, waiting, and trusting God's timing.",
+                desc: "Verses that speak to what you're actually going through. Not generic. Picked for the specific feelings that come with losing a job.",
               },
               {
                 icon: '✍️',
                 title: 'Guided Prompts',
-                desc: 'Honest questions that help you process the emotions of job loss — and listen for what God is saying into it.',
+                desc: "Questions that get honest with God. Not fluffy. The kind that help you actually say what's happening and hear what He says back.",
               },
               {
                 icon: '🕊️',
                 title: 'Space to Hear',
-                desc: 'Open journal pages designed to slow you down, write freely, and receive from God in the waiting room.',
+                desc: 'Pages to write what you are thinking, feeling, and hearing. No format. Just room to be real.',
               },
             ].map((item) => (
               <div key={item.title} className="bg-white rounded-2xl p-6 shadow-sm border border-cream-200">
@@ -246,7 +244,7 @@ export default function LandingPage({ onSuccess }) {
         </div>
       </section>
 
-      {/* ── LUKE 4:18 BRAND SECTION ── */}
+      {/* LUKE 4:18 BRAND SECTION */}
       <section aria-label="About Luke 4:18" className="bg-white py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <img
@@ -261,53 +259,52 @@ export default function LandingPage({ onSuccess }) {
             Luke 4:18
           </h2>
           <div className="w-12 h-px bg-gold-500 mx-auto mb-8" />
-          <blockquote className="font-serif text-xl md:text-2xl italic text-stone-700 leading-relaxed mb-8">
+          <blockquote className="font-serif text-xl md:text-2xl italic text-stone-700 leading-relaxed mb-6">
             "The Spirit of the Lord is on me, because he has anointed me to proclaim
             good news to the poor. He has sent me to proclaim freedom for the prisoners
             and recovery of sight for the blind, to set the oppressed free,
             to proclaim the year of the Lord's favor."
           </blockquote>
-          <p className="text-gold-600 font-semibold tracking-widest text-sm mb-10">— LUKE 4:18–19</p>
+          <p className="text-gold-600 font-semibold tracking-widest text-sm mb-10">LUKE 4:18-19</p>
           <div className="w-12 h-px bg-gold-500 mx-auto mb-10" />
           <p className="text-stone-600 text-lg leading-relaxed max-w-2xl mx-auto">
-            This page exists because unemployment can make you feel like the poor, the prisoner,
-            and the oppressed — all at once. But Jesus specifically announced good news for
-            people in exactly that place. <span className="text-ink-900 font-semibold">Luke 4:18 Free</span> is
-            built on that promise: your waiting room is not the end of your story.
-            God is still speaking — and this journal is designed to help you hear Him.
+            When Jesus read this verse out loud, he was talking to people who felt forgotten.
+            People who were broke, stuck, and overlooked. If unemployment has you feeling any of
+            that, this verse is for you. Luke 4:18 Free exists because God has something to say
+            to you right now, in the middle of it. Not just after.
           </p>
         </div>
       </section>
 
-      {/* ── SOCIAL PROOF / WHY IT WORKS ── */}
+      {/* WHY IT WORKS */}
       <section aria-label="Why this works" className="bg-ink-900 py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-white text-center mb-4">
-            The waiting room is real.<br />
+            The waiting room is real.
+            <br />
             <span className="text-gold-400">So is what's on the other side.</span>
           </h2>
           <p className="text-stone-400 text-center mb-14 max-w-xl mx-auto">
-            You don't have to white-knuckle your way through unemployment. People who process
-            their season with intention — through writing, prayer, and scripture — move through
-            it differently. Not faster necessarily. But with more clarity, less fear, and a
-            stronger sense of what God is saying.
+            You don't have to white-knuckle your way through this. People who take time to write,
+            pray, and sit with scripture during unemployment come out the other side differently.
+            Not always faster. But clearer on who they are and what God was doing the whole time.
           </p>
           <div className="grid md:grid-cols-3 gap-6 text-center">
             {[
               {
                 stat: '10 min',
                 label: 'per day',
-                desc: "That's all each journal entry takes — low barrier, high impact.",
+                desc: "That's it. Grab a pen and show up.",
               },
               {
                 stat: '3 days',
                 label: 'completely free',
-                desc: 'No credit card. No catch. Just you, God, and a journal.',
+                desc: 'No card. No catch. Start and see if it helps.',
               },
               {
                 stat: '100%',
-                label: 'scripture-rooted',
-                desc: 'Every prompt is grounded in the Word — not just positive thinking.',
+                label: 'scripture-based',
+                desc: 'Every prompt comes from the Word. Not just good vibes.',
               },
             ].map((item) => (
               <div key={item.stat} className="bg-white/5 border border-gold-500/15 rounded-2xl p-6">
@@ -320,14 +317,14 @@ export default function LandingPage({ onSuccess }) {
         </div>
       </section>
 
-      {/* ── ABOUT THE BOOK ── */}
+      {/* ABOUT THE BOOK */}
       <section aria-label="About The Waiting Room journal" className="bg-cream-50 py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
               <img
                 src="/waiting_room_last_frame_v2.jpg"
-                alt="The Waiting Room — full journal"
+                alt="The Waiting Room journal"
                 className="w-56 rounded-xl shadow-2xl border border-cream-200 object-cover"
               />
             </div>
@@ -337,16 +334,15 @@ export default function LandingPage({ onSuccess }) {
                 The Waiting Room
               </h2>
               <p className="text-stone-600 leading-relaxed mb-4">
-                The free 3 days are just the beginning. The full journal contains weeks of
-                daily prompts designed to walk you through every stage of the unemployment season —
-                from the initial shock, through the uncertainty, to the clarity of what's next.
+                The 3 free days give you a feel for it. The full journal takes you through the
+                whole thing. The shock of losing the job, the in-between stretch where nothing
+                feels certain, and the slow process of figuring out what God is calling you into next.
               </p>
               <p className="text-stone-600 leading-relaxed mb-4">
-                People who journal intentionally during hard seasons don't just survive them —
-                they emerge with a deeper faith, a clearer sense of purpose, and the confidence
-                that God was with them the whole time.
+                People who journal through hard seasons don't just survive them. They come out
+                with a deeper faith and a clearer sense that God was present the whole time.
               </p>
-              <p className="text-stone-600 leading-relaxed mb-8 font-medium text-ink-800">
+              <p className="text-ink-800 font-medium leading-relaxed mb-8">
                 Don't let this season go to waste. The full journal is your guide through it.
               </p>
               <a
@@ -355,32 +351,32 @@ export default function LandingPage({ onSuccess }) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-ink-900 hover:bg-ink-800 text-gold-400 font-semibold px-6 py-3 rounded-xl transition-colors border border-gold-600/30"
               >
-                Get the Full Book on Amazon →
+                Get the Full Book on Amazon
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── GET FULL BOOK CTA ── */}
+      {/* GET FULL BOOK CTA */}
       <section aria-label="Get the full book" className="bg-gold-500 py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left">
               <p className="text-ink-800 text-xs font-semibold uppercase tracking-[0.25em] mb-4">
-                Ready to go deeper?
+                Ready to keep going?
               </p>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-ink-900 mb-5">
-                Get the full journal.<br />Transform the waiting.
+                Get the full journal.
               </h2>
               <p className="text-ink-800 leading-relaxed mb-4">
-                The 3-day free version gives you a taste. The full journal gives you a
-                complete road map — weeks of guided scripture, prayer, and reflection to carry
-                you from confusion to clarity.
+                The free version is a starting point. The full journal walks you all the way
+                through. Weeks of prompts, scripture, and space to hear from God across the
+                whole season.
               </p>
               <p className="text-ink-700 text-sm leading-relaxed mb-8">
-                ✓ Weeks of daily journal prompts &nbsp;·&nbsp; ✓ Scripture for every stage
-                &nbsp;·&nbsp; ✓ Designed for the whole unemployment journey
+                Weeks of daily journal prompts &nbsp;·&nbsp; Scripture for every stage
+                &nbsp;·&nbsp; Built for the whole unemployment journey
               </p>
               <a
                 href="https://www.amazon.com/dp/B0GRQBC2JP"
@@ -388,7 +384,7 @@ export default function LandingPage({ onSuccess }) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-ink-900 hover:bg-ink-800 text-gold-400 font-bold px-8 py-4 rounded-xl transition-colors text-sm tracking-widest uppercase"
               >
-                Buy on Amazon →
+                Buy on Amazon
               </a>
             </div>
             <div className="flex justify-center">
@@ -396,7 +392,7 @@ export default function LandingPage({ onSuccess }) {
                 <div className="absolute -inset-4 rounded-2xl bg-ink-900/20 blur-2xl" />
                 <img
                   src="/waiting_room_last_frame_v2.jpg"
-                  alt="The Waiting Room — available on Amazon"
+                  alt="The Waiting Room on Amazon"
                   className="relative w-52 rounded-xl shadow-2xl object-cover"
                 />
               </div>
@@ -405,7 +401,7 @@ export default function LandingPage({ onSuccess }) {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* FAQ */}
       <section aria-label="Frequently asked questions" className="bg-cream-100 py-20 px-6">
         <div className="max-w-2xl mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-ink-900 text-center mb-4">
@@ -423,7 +419,7 @@ export default function LandingPage({ onSuccess }) {
                   className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-ink-900 hover:text-gold-600 transition-colors"
                 >
                   <span>{item.q}</span>
-                  <span className="text-gold-500 text-xl flex-shrink-0">{openFaq === i ? '−' : '+'}</span>
+                  <span className="text-gold-500 text-xl flex-shrink-0">{openFaq === i ? '-' : '+'}</span>
                 </button>
                 {openFaq === i && (
                   <p className="px-6 pb-5 text-stone-600 text-sm leading-relaxed">{item.a}</p>
@@ -434,7 +430,7 @@ export default function LandingPage({ onSuccess }) {
         </div>
       </section>
 
-      {/* ── FOLLOW / COMMUNITY ── */}
+      {/* FOLLOW */}
       <section aria-label="Follow Luke 4:18 on social media" className="bg-white py-16 px-6">
         <div className="max-w-2xl mx-auto text-center">
           <img
@@ -443,11 +439,10 @@ export default function LandingPage({ onSuccess }) {
             className="h-16 w-16 object-contain mx-auto mb-6"
           />
           <h2 className="font-serif text-2xl md:text-3xl font-bold text-ink-900 mb-3">
-            Join the community
+            Come follow along
           </h2>
           <p className="text-stone-500 text-sm leading-relaxed mb-8 max-w-md mx-auto">
-            Daily encouragement, scripture, and stories from people walking through
-            the waiting room. You're not alone in this season.
+            Real talk about faith, work, and what it looks like to trust God when things fall apart.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             {socials.map((s) => (
@@ -467,14 +462,14 @@ export default function LandingPage({ onSuccess }) {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
+      {/* FOOTER */}
       <footer className="bg-ink-900 py-12 px-6 text-center">
         <img
           src="/luke418_logo_v4.svg"
           alt="Luke 4:18 Free Indeed"
           className="h-16 w-16 object-contain mx-auto mb-4 opacity-90"
         />
-        <p className="text-stone-500 text-sm italic mb-6">"He has sent me to proclaim freedom…"</p>
+        <p className="text-stone-500 text-sm italic mb-6">"He has sent me to proclaim freedom..."</p>
         <div className="flex items-center justify-center gap-6 mb-6">
           {socials.map((s) => (
             <a
@@ -497,7 +492,7 @@ export default function LandingPage({ onSuccess }) {
         >
           Get The Waiting Room on Amazon
         </a>
-        <p className="text-stone-700 text-xs mt-6">© 2025 Luke 4:18. All rights reserved.</p>
+        <p className="text-stone-700 text-xs mt-6">2025 Luke 4:18. All rights reserved.</p>
       </footer>
     </div>
   )

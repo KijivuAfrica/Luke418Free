@@ -16,8 +16,8 @@ export default function ThankYouPage() {
         </h1>
         <p className="text-stone-300 text-lg leading-relaxed mb-8">
           Click below to download your free 3-day excerpt of{' '}
-          <em className="text-gold-300">The Waiting Room</em>. We also sent a copy to your inbox
-          so you can access it anytime.
+          <em className="text-gold-300">The Waiting Room</em>. We sent a copy to your inbox too
+          so you can find it anytime.
         </p>
         <a
           href="/waiting-room-3-day-sample.pdf"
