@@ -100,6 +100,10 @@ export default function LandingPage({ onSuccess }) {
       )
 
       if (res.ok || res.status === 202) {
+        window.gtag?.('event', 'generate_lead', {
+          event_category: 'Free Journal',
+          event_label: 'Hero Form',
+        })
         onSuccess()
       } else {
         const data = await res.json().catch(() => ({}))
