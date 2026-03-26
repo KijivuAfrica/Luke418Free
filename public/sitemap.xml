@@ -2,8 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://luke418free.com/</loc>
-    <lastmod>2025-03-25</lastmod>
+    <lastmod>2025-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://luke418free.com/gift</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://luke418free.com/blog</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://luke418free.com/blog/gifts-for-someone-who-lost-their-job</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luke418free.com/blog/just-lost-your-job-what-to-do-first</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://luke418free.com/blog/bible-verses-for-unemployment</loc>
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

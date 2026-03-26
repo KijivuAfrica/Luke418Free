@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const KLAVIYO_PUBLIC_KEY = import.meta.env.VITE_KLAVIYO_PUBLIC_KEY || 'Xmx8KD'
 const KLAVIYO_LIST_ID = import.meta.env.VITE_KLAVIYO_LIST_ID || ''
@@ -122,14 +123,18 @@ export default function LandingPage({ onSuccess }) {
       {/* NAV */}
       <nav className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-4 md:px-12">
         <img src="/luke418_logo_v4.svg" alt="Luke 4:18 Free Indeed" className="h-14 w-14 object-contain" />
-        <a
-          href="https://www.amazon.com/dp/B0GRQBC2JP"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-medium text-gold-300 hover:text-gold-400 transition-colors border border-gold-500/40 rounded-full px-4 py-1.5"
-        >
-          Get Full Book
-        </a>
+        <div className="flex items-center gap-5">
+          <Link to="/blog" className="text-sm text-stone-400 hover:text-gold-400 transition-colors hidden sm:block">Blog</Link>
+          <Link to="/gift" className="text-sm text-stone-400 hover:text-gold-400 transition-colors hidden sm:block">Gift Ideas</Link>
+          <a
+            href="https://www.amazon.com/dp/B0GRQBC2JP"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-gold-300 hover:text-gold-400 transition-colors border border-gold-500/40 rounded-full px-4 py-1.5"
+          >
+            Get Full Book
+          </a>
+        </div>
       </nav>
 
       {/* HERO */}
