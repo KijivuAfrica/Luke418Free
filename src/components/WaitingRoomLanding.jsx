@@ -40,6 +40,7 @@ function EmailForm({ dark = false }) {
           event_category: 'Free Journal',
           event_label: 'WaitingRoom Form',
         })
+        window.fbq?.('track', 'Lead')
         setSubmitted(true)
       } else {
         const body = await res.json().catch(() => ({}))
