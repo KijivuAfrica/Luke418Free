@@ -396,6 +396,17 @@ export default function WaitingRoomLanding() {
         </div>
       </section>
 
+      {/* ── FOOTER ── */}
+      <footer style={{ background: '#0a0a0a', padding: '24px', textAlign: 'center' }}>
+        <Link to="/privacy" style={{ fontFamily: 'Inter, sans-serif', fontSize: '11px', color: 'rgba(245,240,232,0.3)', textDecoration: 'none' }}>
+          Privacy Policy
+        </Link>
+        <span style={{ color: 'rgba(245,240,232,0.15)', margin: '0 12px' }}>·</span>
+        <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '11px', color: 'rgba(245,240,232,0.3)' }}>
+          © 2026 Luke 4:18 Publishers
+        </span>
+      </footer>
+
     </div>
   )
 }

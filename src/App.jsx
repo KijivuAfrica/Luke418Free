@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import WaitingRoomLanding from './components/WaitingRoomLanding'
+import PrivacyPage from './components/PrivacyPage'
 import LandingPage from './components/LandingPage'
 import ThankYouPage from './components/ThankYouPage'
 import GiftPage from './components/GiftPage'
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/gift" element={<GiftPage />} />
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
       </Routes>
     </BrowserRouter>
   )
