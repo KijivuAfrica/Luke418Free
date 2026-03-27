@@ -1,14 +1,59 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+const KLAVIYO_PUBLIC_KEY = import.meta.env.VITE_KLAVIYO_PUBLIC_KEY || 'Xmx8KD'
+const KLAVIYO_LIST_ID = import.meta.env.VITE_KLAVIYO_LIST_ID || 'Wzb547'
+
 function EmailForm({ dark = false }) {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Email captured:', email)
-    setSubmitted(true)
+    setError('')
+    setLoading(true)
+    try {
+      const res = await fetch(
+        `https://a.klaviyo.com/client/subscriptions/?company_id=${KLAVIYO_PUBLIC_KEY}`,
+        {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            'revision': '2024-02-15',
+          },
+          body: JSON.stringify({
+            data: {
+              type: 'subscription',
+              attributes: {
+                custom_source: 'Luke418Free Landing Page',
+                list_id: KLAVIYO_LIST_ID,
+                profile: {
+                  data: {
+                    type: 'profile',
+                    attributes: { email },
+                  },
+                },
+              },
+            },
+          }),
+        }
+      )
+      if (res.ok || res.status === 202) {
+        window.gtag?.('event', 'generate_lead', {
+          event_category: 'Free Journal',
+          event_label: 'WaitingRoom Form',
+        })
+        setSubmitted(true)
+      } else {
+        throw new Error()
+      }
+    } catch {
+      setError('Something went wrong. Try again or email us directly.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (submitted) {
@@ -41,12 +86,18 @@ function EmailForm({ dark = false }) {
           marginBottom: '12px',
         }}
       />
+      {error && (
+        <p style={{ color: '#C9A84C', fontSize: '13px', fontFamily: 'Inter, sans-serif', marginBottom: '10px' }}>
+          {error}
+        </p>
+      )}
       <button
         type="submit"
+        disabled={loading}
         style={{
           width: '100%',
           padding: '15px',
-          background: '#C9A84C',
+          background: loading ? 'rgba(201,168,76,0.6)' : '#C9A84C',
           color: '#0a0a0a',
           fontSize: '14px',
           fontWeight: '700',
@@ -55,11 +106,12 @@ function EmailForm({ dark = false }) {
           textTransform: 'uppercase',
           border: 'none',
           borderRadius: '8px',
-          cursor: 'pointer',
+          cursor: loading ? 'not-allowed' : 'pointer',
           marginBottom: '12px',
+          transition: 'background 0.2s',
         }}
       >
-        Send Me the 3 Days
+        {loading ? 'Sending...' : 'Send Me the 3 Days'}
       </button>
       <p style={{
         fontFamily: 'Inter, sans-serif',
