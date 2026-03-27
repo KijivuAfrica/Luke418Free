@@ -21,20 +21,15 @@ function EmailForm({ dark = false }) {
           method: 'POST',
           headers: {
             'content-type': 'application/json',
-            'revision': '2024-02-15',
+            'revision': '2023-02-22',
           },
           body: JSON.stringify({
             data: {
               type: 'subscription',
               attributes: {
-                custom_source: 'Luke418Free Landing Page',
                 list_id: KLAVIYO_LIST_ID,
-                profile: {
-                  data: {
-                    type: 'profile',
-                    attributes: { email },
-                  },
-                },
+                email,
+                custom_source: 'Luke418Free Landing Page',
               },
             },
           }),
@@ -47,9 +42,12 @@ function EmailForm({ dark = false }) {
         })
         setSubmitted(true)
       } else {
+        const body = await res.json().catch(() => ({}))
+        console.error('Klaviyo error', res.status, body)
         throw new Error()
       }
-    } catch {
+    } catch (err) {
+      console.error('Form submit error:', err)
       setError('Something went wrong. Try again or email us directly.')
     } finally {
       setLoading(false)
