@@ -19,7 +19,10 @@
   .wrl-hero { padding: 32px 20px !important; min-height: auto !important; }
   .wrl-hero-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
   .wrl-hero-image { display: none !important; }
-  .wrl-hero-h1 { font-size: 28px !important; margin-bottom: 14px !important; line-height: 1.15 !important; }
+  .wrl-hero-h1 { font-size: 24px !important; margin-bottom: 14px !important; line-height: 1.2 !important; }
   .wrl-hero-body { font-size: 14px !important; margin-bottom: 24px !important; line-height: 1.65 !important; }
   .wrl-hero-label { margin-bottom: 14px !important; }
+  .wrl-before-after-grid { grid-template-columns: 1fr !important; }
+  .wrl-before-after-grid > div { padding-left: 0 !important; padding-right: 0 !important; margin-bottom: 40px; }
+  .wrl-divider { display: none !important; }
 }

@@ -110,7 +110,7 @@ function EmailForm({ dark = false }) {
           transition: 'background 0.2s',
         }}
       >
-        {loading ? 'Sending...' : 'Send Me the 3 Days'}
+        {loading ? 'Sending...' : 'Start Day 1 Today. It\'s Free.'}
       </button>
       <p style={{
         fontFamily: 'Inter, sans-serif',
@@ -119,7 +119,7 @@ function EmailForm({ dark = false }) {
         margin: 0,
         textAlign: 'center',
       }}>
-        No spam. No card. Just 3 days of hope.
+        Joined by people navigating job loss, career transitions, and unexpected life changes.
       </p>
     </form>
   )
@@ -232,8 +232,8 @@ export default function WaitingRoomLanding() {
               marginBottom: '24px',
               letterSpacing: '-0.01em',
             }}>
-              You didn't lose your purpose.<br />
-              <span style={{ color: '#C9A84C' }}>Just your paycheck.</span>
+              You've been your job title for so long<br />you forgot{' '}
+              <span style={{ color: '#C9A84C' }}>who you are without it.</span>
             </h1>
             <p className="wrl-hero-body" style={{
               fontFamily: 'Inter, sans-serif',
@@ -247,6 +247,101 @@ export default function WaitingRoomLanding() {
               and whatever God wants to say.
             </p>
             <EmailForm dark />
+          </div>
+        </div>
+      </section>
+
+      {/* ── BEFORE / AFTER ── */}
+      <section style={{ background: '#111111', padding: '72px 24px' }}>
+        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
+          <h2 style={{
+            fontFamily: 'Playfair Display, Georgia, serif',
+            fontSize: 'clamp(26px, 4vw, 36px)',
+            fontWeight: '700',
+            color: '#FFFFFF',
+            textAlign: 'center',
+            marginBottom: '52px',
+          }}>
+            Where this journal meets you.
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '0',
+            position: 'relative',
+          }}
+            className="wrl-before-after-grid"
+          >
+            {/* Vertical divider — desktop only */}
+            <div className="wrl-divider" style={{
+              position: 'absolute',
+              left: '50%',
+              top: '0',
+              bottom: '0',
+              width: '1px',
+              background: 'rgba(201,168,76,0.2)',
+            }} />
+
+            {/* BEFORE */}
+            <div style={{ paddingRight: '40px' }}>
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '10px',
+                fontWeight: '700',
+                textTransform: 'uppercase',
+                letterSpacing: '0.2em',
+                color: 'rgba(245,240,232,0.4)',
+                marginBottom: '24px',
+              }}>
+                Before
+              </p>
+              {[
+                'Checking your phone for emails that haven\'t come',
+                'Telling people you\'re exploring opportunities',
+                'Lying awake wondering if God forgot about you',
+              ].map((line, i) => (
+                <p key={i} style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '15px',
+                  color: 'rgba(245,240,232,0.45)',
+                  lineHeight: '1.7',
+                  marginBottom: '16px',
+                }}>
+                  {line}
+                </p>
+              ))}
+            </div>
+
+            {/* AFTER */}
+            <div style={{ paddingLeft: '40px' }}>
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '10px',
+                fontWeight: '700',
+                textTransform: 'uppercase',
+                letterSpacing: '0.2em',
+                color: '#C9A84C',
+                marginBottom: '24px',
+              }}>
+                After 30 Days
+              </p>
+              {[
+                'Clarity on who you are outside of what you do',
+                'A record of what God was saying the whole time',
+                'The ability to say this season changed you, not broke you',
+              ].map((line, i) => (
+                <p key={i} style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '15px',
+                  color: '#FFFFFF',
+                  lineHeight: '1.7',
+                  marginBottom: '16px',
+                }}>
+                  {line}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
