@@ -167,7 +167,7 @@ export default function WaitingRoomLanding() {
       </nav>
 
       {/* ── HERO ── */}
-      <section style={{
+      <section className="wrl-hero" style={{
         background: '#0a0a0a',
         minHeight: 'calc(100vh - 61px)',
         display: 'flex',
@@ -175,7 +175,7 @@ export default function WaitingRoomLanding() {
         justifyContent: 'center',
         padding: '60px 24px',
       }}>
-        <div style={{
+        <div className="wrl-hero-grid" style={{
           maxWidth: '1000px',
           width: '100%',
           display: 'grid',
@@ -184,8 +184,8 @@ export default function WaitingRoomLanding() {
           alignItems: 'center',
         }}>
 
-          {/* Book cover */}
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          {/* Book cover — hidden on mobile */}
+          <div className="wrl-hero-image" style={{ display: 'flex', justifyContent: 'center' }}>
             <div style={{ position: 'relative' }}>
               <div style={{
                 position: 'absolute',
@@ -212,7 +212,7 @@ export default function WaitingRoomLanding() {
 
           {/* Text + form */}
           <div>
-            <p style={{
+            <p className="wrl-hero-label" style={{
               fontFamily: 'Inter, sans-serif',
               fontSize: '10px',
               fontWeight: '700',
@@ -223,7 +223,7 @@ export default function WaitingRoomLanding() {
             }}>
               Free 3-Day Journal
             </p>
-            <h1 style={{
+            <h1 className="wrl-hero-h1" style={{
               fontFamily: 'Playfair Display, Georgia, serif',
               fontSize: 'clamp(36px, 5vw, 54px)',
               fontWeight: '700',
@@ -235,7 +235,7 @@ export default function WaitingRoomLanding() {
               You didn't lose your purpose.<br />
               <span style={{ color: '#C9A84C' }}>Just your paycheck.</span>
             </h1>
-            <p style={{
+            <p className="wrl-hero-body" style={{
               fontFamily: 'Inter, sans-serif',
               fontSize: '16px',
               color: 'rgba(245,240,232,0.65)',
@@ -333,6 +333,68 @@ export default function WaitingRoomLanding() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── AMAZON UPSELL ── */}
+      <section style={{
+        background: '#0a0a0a',
+        padding: '72px 24px',
+        textAlign: 'center',
+      }}>
+        <div style={{ maxWidth: '480px', margin: '0 auto' }}>
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '10px',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            letterSpacing: '0.2em',
+            color: '#C9A84C',
+            marginBottom: '16px',
+          }}>
+            Ready to Go Deeper?
+          </p>
+          <h2 style={{
+            fontFamily: 'Playfair Display, Georgia, serif',
+            fontSize: 'clamp(26px, 4vw, 36px)',
+            fontWeight: '700',
+            color: '#FFFFFF',
+            lineHeight: '1.2',
+            marginBottom: '16px',
+          }}>
+            Get the full 30-day journal.
+          </h2>
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '15px',
+            color: 'rgba(245,240,232,0.55)',
+            lineHeight: '1.7',
+            marginBottom: '32px',
+          }}>
+            The free 3 days are the beginning. The full journal walks you through everything that comes next.
+          </p>
+          <a
+            href="https://amazon.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              padding: '14px 36px',
+              background: 'transparent',
+              border: '1.5px solid #C9A84C',
+              borderRadius: '8px',
+              color: '#C9A84C',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '13px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              textDecoration: 'none',
+              transition: 'background 0.2s, color 0.2s',
+            }}
+          >
+            Buy on Amazon
+          </a>
         </div>
       </section>
 
