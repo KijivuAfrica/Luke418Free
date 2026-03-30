@@ -469,7 +469,7 @@ export default function WaitingRoomLanding() {
             The free 3 days are the beginning. The full journal walks you through everything that comes next.
           </p>
           <a
-            href="https://amazon.com"
+            href="https://www.amazon.com/dp/B0GRQBC2JP"
             target="_blank"
             rel="noopener noreferrer"
             style={{
