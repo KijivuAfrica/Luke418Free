@@ -140,7 +140,7 @@ export default function LandingPage({ onSuccess }) {
       {/* HERO */}
       <section
         aria-label="Free 3-day journal offer"
-        className="relative min-h-screen flex items-center justify-center bg-ink-900 overflow-hidden px-6 py-28"
+        className="relative min-h-screen flex items-center justify-center bg-ink-900 overflow-hidden px-6 py-16 md:py-28"
       >
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-gold-600/8 blur-3xl" />
@@ -148,7 +148,7 @@ export default function LandingPage({ onSuccess }) {
 
         <div className="relative max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
 
-          <div className="flex justify-center order-2 md:order-1">
+          <div className="hidden md:flex justify-center md:order-1">
             <div className="relative">
               <div className="absolute -inset-4 rounded-2xl bg-gold-500/10 blur-2xl" />
               <img
@@ -160,15 +160,15 @@ export default function LandingPage({ onSuccess }) {
           </div>
 
           <div className="order-1 md:order-2 text-center md:text-left">
-            <p className="text-gold-500 text-xs font-semibold uppercase tracking-[0.25em] mb-5">
+            <p className="text-gold-500 text-xs font-semibold uppercase tracking-[0.25em] mb-3 md:mb-5">
               Free 3-Day Journal
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
+            <h1 className="font-serif text-3xl md:text-5xl font-bold text-white leading-tight mb-3 md:mb-5">
               You didn't lose<br />
               <span className="text-gold-400">your purpose.</span><br />
               Just your paycheck.
             </h1>
-            <p className="text-stone-300 text-base md:text-lg leading-relaxed mb-8">
+            <p className="text-stone-300 text-base md:text-lg leading-relaxed mb-5 md:mb-8">
               If you just lost your job, or you've been in the waiting longer than you expected,
               this journal was made for you. 3 free days. Just you, a pen,
               and whatever God wants to say.
