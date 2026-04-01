@@ -7,6 +7,7 @@ import ThankYouPage from './components/ThankYouPage'
 import GiftPage from './components/GiftPage'
 import BlogIndex from './components/BlogIndex'
 import BlogPost from './components/BlogPost'
+import SalesPage from './pages/SalesPage'
 
 function OriginalHome() {
   const [submitted, setSubmitted] = useState(false)
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/sales" element={<SalesPage />} />
       </Routes>
     </BrowserRouter>
   )
