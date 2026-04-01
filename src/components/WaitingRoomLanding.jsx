@@ -146,24 +146,44 @@ export default function WaitingRoomLanding() {
         }}>
           Luke 4:18
         </span>
-        <a
-          href="https://www.amazon.com/dp/B0GRQBC2JP"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '11px',
-            fontWeight: '700',
-            textTransform: 'uppercase',
-            letterSpacing: '0.1em',
-            color: 'rgba(245,240,232,0.55)',
-            textDecoration: 'none',
-            borderBottom: '1px solid rgba(201,168,76,0.35)',
-            paddingBottom: '2px',
-          }}
-        >
-          Get Full Journal
-        </a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+          <a
+            href="/sales"
+            style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '11px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              color: 'rgba(245,240,232,0.55)',
+              textDecoration: 'none',
+              borderBottom: '1px solid rgba(201,168,76,0.35)',
+              paddingBottom: '2px',
+            }}
+          >
+            Buy the Book
+          </a>
+          <a
+            href="https://www.amazon.com/dp/B0GRQBC2JP"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '11px',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              color: '#C9A84C',
+              textDecoration: 'none',
+              background: 'rgba(201,168,76,0.12)',
+              border: '1px solid rgba(201,168,76,0.3)',
+              borderRadius: '6px',
+              padding: '6px 14px',
+            }}
+          >
+            Amazon →
+          </a>
+        </div>
       </nav>
 
       {/* ── HERO ── */}
