@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome! Your Free Trial Has Begun — Heavenly Tales</title>
+  <meta name="description" content="Your Heavenly Tales free trial has started. Read your first story tonight." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-wrapper">
+
+  <!-- ── Navigation ───────────────────────────────── -->
+  <nav class="nav" role="navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-star">⭐</span>
+        <span class="logo-text">Heavenly Tales</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── Loading State ─────────────────────────── -->
+  <div id="loading-wrap" class="thankyou-wrap" aria-live="polite">
+    <div class="spinner" style="width:44px;height:44px;margin:60px auto 16px;"></div>
+    <p style="color:var(--text-soft);font-family:'Fredoka One',cursive;font-size:1.1rem;">Confirming your subscription…</p>
+  </div>
+
+  <!-- ── Success Content ───────────────────────── -->
+  <main id="success-wrap" class="thankyou-wrap hidden">
+    <div class="thankyou-icon">🌟</div>
+    <h1>Welcome to Heavenly Tales!</h1>
+    <p class="subtitle" id="welcome-subtitle">
+      Your free trial has started. Tonight is Night 1 of 5 — enjoy every moment.
+    </p>
+
+    <div class="trial-card">
+      <h3>📅 Your Trial Details</h3>
+      <div class="trial-detail">
+        <span class="icon">✅</span>
+        <span>Your free trial started today — <strong id="trial-start-display"></strong></span>
+      </div>
+      <div class="trial-detail">
+        <span class="icon">💳</span>
+        <span>Your card will first be charged on <strong id="charge-date-display"></strong></span>
+      </div>
+      <div class="trial-detail">
+        <span class="icon">❌</span>
+        <span>You can cancel any time before then and pay absolutely nothing.</span>
+      </div>
+      <div class="trial-detail">
+        <span class="icon">📧</span>
+        <span>Confirmation sent to <strong id="email-display"></strong></span>
+      </div>
+    </div>
+
+    <p style="color:var(--text-med);font-size:1rem;margin-bottom:24px;">
+      A brand-new Bible story will be waiting for you every night. Read it together, pray together,
+      and watch God's word become part of your child's story.
+    </p>
+
+    <a href="index.html" class="cta-story">Read Tonight's Story ✨</a>
+
+    <p style="margin-top:24px;font-size:0.88rem;color:var(--text-soft);">
+      Questions? Visit <a href="about.html">about this ministry</a> or email us at
+      <a href="mailto:hello@luke418free.com">hello@luke418free.com</a>
+    </p>
+  </main>
+
+  <!-- ── Error Content ─────────────────────────── -->
+  <div id="error-wrap" class="thankyou-wrap hidden">
+    <div class="thankyou-icon">😕</div>
+    <h1 style="color:var(--coral);">Something went wrong</h1>
+    <p class="subtitle">We couldn't confirm your subscription right now.</p>
+    <p style="color:var(--text-med);font-size:0.98rem;margin-bottom:24px;">
+      Don't worry — if your payment went through, your subscription is active.
+      Please email us at <a href="mailto:hello@luke418free.com">hello@luke418free.com</a>
+      and we'll sort it out right away.
+    </p>
+    <a href="index.html" class="cta-story" style="font-size:1rem;padding:14px 32px;">Go to Tonight's Story</a>
+  </div>
+
+  <!-- ── Footer ────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer-verse">"The Spirit of the Lord is upon me…" — Luke 4:18</p>
+    <p>A ministry of <a href="https://luke418free.com" target="_blank" rel="noopener">luke418free.com</a></p>
+  </footer>
+
+  <script src="js/thankyou.js"></script>
+</body>
+</html>

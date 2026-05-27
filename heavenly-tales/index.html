@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heavenly Tales — Bible Bedtime Stories for Kids</title>
+  <meta name="description" content="A new AI-generated Bible bedtime story every night for your children, from the Luke 4:18 Ministry." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-wrapper">
+
+  <!-- ── Paywall Overlay ───────────────────────────── -->
+  <div id="paywall-overlay" class="paywall-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="paywall-title">
+    <div class="paywall-card">
+      <div class="paywall-icon">🌟</div>
+      <h1 class="paywall-headline" id="paywall-title">5 nights free, then stories every night of the year.</h1>
+      <p class="paywall-sub">
+        A warm, biblically grounded bedtime story for your child — every single night.
+        Your card won't be charged for 5 nights. Cancel anytime before then and pay nothing.
+      </p>
+
+      <ul class="paywall-features">
+        <li>A new Bible story every night, matched to your child's age</li>
+        <li>Three age levels: Tiny Ones · Explorers · Seekers</li>
+        <li>Parent prayer points, biblical context &amp; conversation starters</li>
+        <li>Full story archive — revisit any night, any time</li>
+      </ul>
+
+      <div class="plan-toggle">
+        <button class="plan-btn active" data-plan="monthly" data-price-id="price_MONTHLY_ID">
+          Monthly
+          <span class="plan-price">$9.99 / month</span>
+        </button>
+        <button class="plan-btn" data-plan="annual" data-price-id="price_ANNUAL_ID">
+          <span class="plan-badge">Best Value</span>
+          Annual
+          <span class="plan-price">$100 / year</span>
+        </button>
+      </div>
+
+      <input
+        type="email"
+        id="paywall-email"
+        class="paywall-input"
+        placeholder="Your email address"
+        autocomplete="email"
+        required
+      />
+
+      <p class="paywall-error" id="paywall-error"></p>
+
+      <button class="paywall-cta" id="paywall-cta" type="button">
+        Start My Free Trial ✨
+      </button>
+
+      <p class="paywall-fine">
+        Your card is securely saved but <strong>not charged</strong> for 5 nights.
+        After night 5, your subscription begins. Cancel anytime. Powered by Stripe.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Night Indicator ──────────────────────────── -->
+  <div id="night-indicator" class="night-indicator hidden" aria-live="polite">
+    Night <span id="night-num">1</span> of 5 Free ✨
+  </div>
+
+  <!-- ── Navigation ───────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Heavenly Tales home">
+        <span class="logo-star">⭐</span>
+        <span class="logo-text">Heavenly Tales</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Tonight</a></li>
+        <li><a href="archive.html">Archive</a></li>
+        <li><a href="prayer.html">Prayers</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Main ─────────────────────────────────────── -->
+  <main>
+    <!-- Age Selector -->
+    <section class="age-selector" aria-label="Choose your child's age group">
+      <p class="age-selector-label">Who are we reading for tonight?</p>
+      <div class="age-buttons">
+        <button class="age-btn" data-age="tiny" aria-pressed="false">🌱 Tiny Ones <small>(2–4)</small></button>
+        <button class="age-btn active" data-age="explorers" aria-pressed="true">🔍 Explorers <small>(5–8)</small></button>
+        <button class="age-btn" data-age="seekers" aria-pressed="false">⭐ Seekers <small>(9–12)</small></button>
+      </div>
+    </section>
+
+    <!-- Story Header (visible after story loads) -->
+    <div id="story-header" class="story-header hidden" role="banner" aria-label="Story illustration">
+      <!-- Animation container injected by JS -->
+      <div class="story-header-content">
+        <h1 class="story-title-header" id="story-title"></h1>
+        <span class="story-passage-ref" id="story-passage"></span>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loading-state" class="loading-state" role="status" aria-live="polite">
+      <div class="spinner"></div>
+      <p>Preparing tonight's story…</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="error-state" class="error-state hidden" role="alert">
+      <p id="error-message">Something went wrong loading tonight's story.</p>
+      <button class="retry-btn" id="retry-btn" type="button">Try Again</button>
+    </div>
+
+    <!-- Story Content -->
+    <section id="story-section" class="story-section hidden" aria-label="Tonight's story">
+      <div class="story-text" id="story-text"></div>
+
+      <div class="lesson-box" id="lesson-box">
+        <h3>✨ Tonight's Lesson</h3>
+        <p id="lesson-text"></p>
+      </div>
+    </section>
+
+    <!-- Parent Section -->
+    <section id="parent-section" class="parent-section hidden" aria-label="Parent resources">
+      <h2 class="parent-header">💜 Dear Parent</h2>
+
+      <div class="parent-card">
+        <h3>🙏 Prayer Points This Week</h3>
+        <ul class="prayer-list" id="prayer-list"></ul>
+      </div>
+
+      <div class="parent-card context-card">
+        <h3>📖 Biblical Context</h3>
+        <p id="context-text"></p>
+      </div>
+
+      <div class="parent-card convo-card">
+        <h3>💬 Tonight's Conversation Starter</h3>
+        <p id="convo-text"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer-verse">"The Spirit of the Lord is upon me…" — Luke 4:18</p>
+    <p>A ministry of <a href="https://luke418free.com" target="_blank" rel="noopener">luke418free.com</a> · Built with love for every family</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

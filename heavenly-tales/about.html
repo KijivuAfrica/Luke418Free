@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Heavenly Tales · Luke 4:18 Ministry</title>
+  <meta name="description" content="Heavenly Tales is a Luke 4:18 ministry — bringing the Good News to families through nightly Bible bedtime stories." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-wrapper">
+
+  <!-- ── Night Indicator ──────────────────────────── -->
+  <div id="night-indicator" class="night-indicator hidden">
+    Night <span id="night-num">1</span> of 5 Free ✨
+  </div>
+
+  <!-- ── Navigation ───────────────────────────────── -->
+  <nav class="nav" role="navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-star">⭐</span>
+        <span class="logo-text">Heavenly Tales</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Tonight</a></li>
+        <li><a href="archive.html">Archive</a></li>
+        <li><a href="prayer.html">Prayers</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Verse Banner ───────────────────────────── -->
+  <header class="verse-banner">
+    <blockquote>
+      "The Spirit of the Lord is upon me, because he has anointed me to proclaim good news to the poor.
+      He has sent me to proclaim liberty to the captives and recovering of sight to the blind,
+      to set at liberty those who are oppressed."
+    </blockquote>
+    <p class="verse-ref">— Luke 4:18 (ESV)</p>
+  </header>
+
+  <!-- ── About Content ──────────────────────────── -->
+  <main>
+    <div class="about-body">
+
+      <div class="about-block">
+        <h2>🌟 Our Ministry Heart</h2>
+        <p>
+          Heavenly Tales is born from Luke 4:18 — the moment Jesus stood in the synagogue and declared
+          His mission. We believe that mission reaches into every home, every family, every bedtime.
+          Good news belongs in the nursery. Liberty belongs in the hearts of our children.
+        </p>
+        <p>
+          This app exists because busy moms deserve a resource that's warm, beautiful, biblical,
+          and <em>ready</em> every single night. You shouldn't have to search Pinterest for 20 minutes
+          before bed. The story should be waiting for you.
+        </p>
+      </div>
+
+      <div class="about-block" style="background:var(--sky-light);border-left:5px solid var(--sky);">
+        <h2 style="color:var(--deep);">📖 What Heavenly Tales Is</h2>
+        <p>
+          Every night at midnight, a new Bible bedtime story is ready — generated thoughtfully
+          using AI, grounded in Scripture, and tailored to your child's age.
+        </p>
+        <p>Three reading levels meet your child where they are:</p>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;margin-bottom:1.2em;">
+          <li style="background:white;border-radius:12px;padding:14px 18px;">
+            <strong>🌱 Tiny Ones (2–4)</strong> — Simple words, gentle repetition, the joy of God's love.
+          </li>
+          <li style="background:white;border-radius:12px;padding:14px 18px;">
+            <strong>🔍 Explorers (5–8)</strong> — Adventure, courage, and learning to trust.
+          </li>
+          <li style="background:white;border-radius:12px;padding:14px 18px;">
+            <strong>⭐ Seekers (9–12)</strong> — Deeper questions, real faith, lasting truth.
+          </li>
+        </ul>
+        <p>
+          Each story includes a faith lesson, parent prayer points, biblical context,
+          and a conversation starter — everything you need for a meaningful bedtime moment.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <h2>💛 For Every Mom</h2>
+        <p>
+          We built this for the mom who's exhausted but doesn't want to skip the sacred.
+          For the mom who wants her child to grow up knowing these stories in their bones.
+          For the mom who prays over her children in the dark after they've fallen asleep.
+        </p>
+        <p>
+          You are not alone. This app stands beside you every night of the year.
+        </p>
+      </div>
+
+      <div class="about-block" style="text-align:center;">
+        <h2>🔗 Connect with the Ministry</h2>
+        <p>Heavenly Tales is part of the wider Luke 4:18 ministry at luke418free.com.</p>
+        <a
+          href="https://luke418free.com"
+          target="_blank"
+          rel="noopener"
+          style="display:inline-block;background:var(--deep);color:white;padding:13px 32px;border-radius:30px;font-family:'Fredoka One',cursive;font-size:1.1rem;margin-top:8px;"
+        >
+          Visit luke418free.com
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ── Footer ────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer-verse">"The Spirit of the Lord is upon me…" — Luke 4:18</p>
+    <p>A ministry of <a href="https://luke418free.com" target="_blank" rel="noopener">luke418free.com</a> · Built with love for every family</p>
+  </footer>
+
+  <script>
+    // Show night indicator if in trial
+    const trialStart = localStorage.getItem('heavenly_trial_start');
+    if (trialStart && localStorage.getItem('heavenly_subscribed')) {
+      const daysSince = Math.floor((Date.now() - new Date(trialStart)) / 86400000);
+      const nightNum = Math.min(daysSince + 1, 5);
+      if (daysSince < 5) {
+        const ind = document.getElementById('night-indicator');
+        document.getElementById('night-num').textContent = nightNum;
+        ind.classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

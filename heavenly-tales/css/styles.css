@@ -1,0 +1,1070 @@
+/* ============================================================
+   HEAVENLY TALES — Global Styles
+   Luke 4:18 Ministry · luke418free.com
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* ─── Variables ─────────────────────────────────────────── */
+:root {
+  --bg:        #FFF8E7;
+  --card:      #FFFDF5;
+  --sky:       #5BC0EB;
+  --sky-light: #D6EEFF;
+  --yellow:    #FFD166;
+  --yellow-lt: #FFF3CD;
+  --green:     #7BC67E;
+  --green-lt:  #E8F5E9;
+  --coral:     #FF6B6B;
+  --coral-lt:  #FFE8E8;
+  --purple:    #C89FE0;
+  --purple-lt: #F3EAFF;
+  --deep:      #1A5276;
+  --text:      #3D2B1F;
+  --text-med:  #6B4F3A;
+  --text-soft: #9C7B5C;
+  --border:    #EEE0C0;
+  --shadow:    rgba(61,43,31,0.08);
+  --radius:    22px;
+  --radius-sm: 12px;
+  --max-w:     780px;
+}
+
+/* ─── Reset & Base ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  line-height: 1.75;
+  min-height: 100vh;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--deep); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ─── Typography ─────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: 'Fredoka One', cursive;
+  line-height: 1.25;
+  color: var(--text);
+}
+h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); }
+h2 { font-size: clamp(1.5rem, 4vw, 2.1rem); }
+h3 { font-size: clamp(1.2rem, 3vw, 1.6rem); }
+
+p { margin-bottom: 1.2em; }
+p:last-child { margin-bottom: 0; }
+
+/* ─── Layout ────────────────────────────────────────── */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main { flex: 1; padding-bottom: 60px; }
+
+/* ─── Navigation ────────────────────────────────────── */
+.nav {
+  background: var(--card);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 16px;
+}
+
+.nav-logo {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.4rem;
+  color: var(--deep);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-logo .logo-star { font-size: 1.6rem; }
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 6px 14px;
+  border-radius: 30px;
+  color: var(--text-med);
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  background: var(--sky-light);
+  color: var(--deep);
+  text-decoration: none;
+}
+
+/* ─── Footer ─────────────────────────────────────────── */
+.footer {
+  background: var(--card);
+  border-top: 2px solid var(--border);
+  padding: 28px 20px;
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+.footer a { color: var(--coral); font-weight: 700; }
+.footer-verse {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.05rem;
+  color: var(--deep);
+  margin-bottom: 6px;
+}
+
+/* ─── Paywall Overlay ─────────────────────────────────── */
+.paywall-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFF3CD 50%, #FFE8D6 100%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+.paywall-overlay.hidden { display: none; }
+
+.paywall-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: clamp(28px, 5vw, 52px);
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 8px 40px rgba(61,43,31,0.12);
+  text-align: center;
+}
+
+.paywall-icon { font-size: 3.5rem; margin-bottom: 12px; }
+
+.paywall-headline {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--deep);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.paywall-sub {
+  color: var(--text-med);
+  font-size: 1.05rem;
+  margin-bottom: 28px;
+  line-height: 1.65;
+}
+
+.paywall-features {
+  background: var(--sky-light);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  text-align: left;
+  margin-bottom: 24px;
+  list-style: none;
+}
+.paywall-features li {
+  padding: 5px 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--deep);
+}
+.paywall-features li::before { content: '✓  '; color: var(--green); font-weight: 800; }
+
+.plan-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.plan-btn {
+  flex: 1;
+  padding: 14px 10px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: white;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-med);
+  transition: all 0.2s;
+  position: relative;
+}
+.plan-btn.active {
+  border-color: var(--coral);
+  background: var(--coral-lt);
+  color: var(--text);
+}
+.plan-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--green);
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.plan-price {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.3rem;
+  color: var(--deep);
+  display: block;
+  margin-top: 3px;
+}
+
+.paywall-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  color: var(--text);
+  background: white;
+  margin-bottom: 14px;
+  transition: border-color 0.2s;
+}
+.paywall-input:focus {
+  outline: none;
+  border-color: var(--sky);
+}
+
+.paywall-cta {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--coral) 0%, #FF8C42 100%);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 16px rgba(255,107,107,0.35);
+}
+.paywall-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,107,107,0.45);
+}
+.paywall-cta:active { transform: translateY(0); }
+.paywall-cta:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.paywall-fine {
+  margin-top: 12px;
+  font-size: 0.83rem;
+  color: var(--text-soft);
+}
+
+.paywall-error {
+  color: var(--coral);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  display: none;
+}
+.paywall-error.visible { display: block; }
+
+/* ─── Night Indicator ────────────────────────────────── */
+.night-indicator {
+  position: fixed;
+  top: 76px;
+  right: 16px;
+  background: var(--yellow);
+  color: var(--text);
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.88rem;
+  padding: 6px 14px;
+  border-radius: 30px;
+  z-index: 90;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.night-indicator.hidden { display: none; }
+
+/* ─── Age Selector ───────────────────────────────────── */
+.age-selector {
+  padding: 32px 20px 0;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+.age-selector-label {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.1rem;
+  color: var(--text-med);
+  margin-bottom: 12px;
+  text-align: center;
+}
+.age-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.age-btn {
+  padding: 12px 22px;
+  border: 2.5px solid var(--border);
+  border-radius: 40px;
+  background: white;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-med);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.age-btn:hover { border-color: var(--sky); background: var(--sky-light); color: var(--deep); }
+.age-btn.active {
+  border-color: var(--sky);
+  background: var(--sky-light);
+  color: var(--deep);
+  box-shadow: 0 2px 8px rgba(91,192,235,0.3);
+}
+
+/* ─── Story Header & Animations ──────────────────────── */
+.story-header {
+  max-width: var(--max-w);
+  margin: 24px auto 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 28px 28px 32px;
+  text-align: center;
+  background: linear-gradient(160deg, var(--sky-light) 0%, var(--yellow-lt) 100%);
+}
+.story-header.hidden { display: none; }
+
+.anim-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Stars animation */
+.anim-stars { background: linear-gradient(160deg, #D4E5FF 0%, #E8D5FF 100%); }
+.star {
+  position: absolute;
+  font-size: 1.4rem;
+  animation: floatStar 4s ease-in-out infinite;
+  opacity: 0.85;
+}
+.star-1  { top: 15%; left: 10%; animation-delay: 0s;    font-size: 1.8rem; }
+.star-2  { top: 25%; left: 30%; animation-delay: 0.8s;  font-size: 1.1rem; }
+.star-3  { top: 12%; left: 55%; animation-delay: 1.6s;  font-size: 2rem;   }
+.star-4  { top: 35%; left: 75%; animation-delay: 0.4s;  font-size: 1.2rem; }
+.star-5  { top: 20%; left: 88%; animation-delay: 1.2s;  font-size: 1.6rem; }
+.star-6  { top: 45%; left: 45%; animation-delay: 2s;    font-size: 0.9rem; }
+@keyframes floatStar {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+  50%       { transform: translateY(-18px) rotate(20deg); opacity: 1; }
+}
+
+/* Waves animation */
+.anim-waves { background: linear-gradient(160deg, #A8D5E2 0%, #B2EAE8 100%); }
+.wave-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 70px;
+}
+.wave-svg { width: 100%; height: 100%; animation: waveSway 3s linear infinite; }
+.wave-svg-2 { animation: waveSway 3s linear infinite reverse; opacity: 0.5; margin-top: -30px; }
+@keyframes waveSway {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.anim-waves .boat {
+  position: absolute;
+  font-size: 2.2rem;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: boatRock 3s ease-in-out infinite;
+}
+@keyframes boatRock {
+  0%, 100% { transform: translateX(-50%) rotate(-4deg); }
+  50%       { transform: translateX(-50%) rotate(4deg) translateY(-4px); }
+}
+
+/* Sling animation */
+.anim-sling { background: linear-gradient(160deg, #FFE4A3 0%, #F5D070 100%); }
+.sling-hero {
+  position: absolute;
+  font-size: 3.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: slingWobble 2s ease-in-out infinite;
+}
+.stone {
+  position: absolute;
+  font-size: 1.6rem;
+  animation: stoneSpin 2.5s linear infinite;
+  transform-origin: 80px 0;
+  top: 30%;
+  left: 40%;
+}
+@keyframes stoneSpin {
+  0%   { transform: rotate(0deg) translateX(80px); }
+  100% { transform: rotate(360deg) translateX(80px); }
+}
+@keyframes slingWobble {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-5deg); }
+  50%       { transform: translate(-50%, -50%) rotate(5deg); }
+}
+.hill {
+  position: absolute;
+  font-size: 1.2rem;
+  bottom: 12px;
+}
+.hill-l { left: 10%; }
+.hill-r { right: 10%; }
+
+/* Doves animation */
+.anim-doves { background: linear-gradient(160deg, #FCE4D6 0%, #D6EAF8 100%); }
+.dove {
+  position: absolute;
+  font-size: 1.8rem;
+  animation: doveGlide 6s ease-in-out infinite;
+  opacity: 0;
+}
+.dove-1 { top: 20%; animation-delay: 0s;   font-size: 2.2rem; }
+.dove-2 { top: 40%; animation-delay: 1.5s; font-size: 1.4rem; }
+.dove-3 { top: 15%; animation-delay: 3s;   font-size: 1.8rem; }
+@keyframes doveGlide {
+  0%   { transform: translateX(-140px) translateY(10px); opacity: 0; }
+  15%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateX(calc(100vw + 60px)) translateY(-20px); opacity: 0; }
+}
+
+/* Rainbow animation */
+.anim-rainbow { background: linear-gradient(160deg, #FFF0D6 0%, #D6F0FF 100%); }
+.rainbow-arc {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 160px;
+  border-radius: 160px 160px 0 0;
+  border: 22px solid transparent;
+  border-image: linear-gradient(90deg,
+    #FF6B6B 0%, #FF9F40 18%, #FFD166 36%, #7BC67E 54%, #5BC0EB 72%, #C89FE0 90%) 1;
+  animation: rainbowGlow 3s ease-in-out infinite;
+  opacity: 0.7;
+}
+@keyframes rainbowGlow {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  50%       { opacity: 1;   transform: translateX(-50%) scale(1.03); }
+}
+.cloud { position: absolute; font-size: 2rem; }
+.cloud-1 { top: 10%; left: 10%; animation: cloudDrift 8s ease-in-out infinite; }
+.cloud-2 { top: 20%; right: 10%; animation: cloudDrift 10s ease-in-out infinite reverse; }
+@keyframes cloudDrift {
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(12px); }
+}
+
+/* Fire animation */
+.anim-fire { background: linear-gradient(160deg, #FFD4A3 0%, #FFE08A 100%); }
+.flame {
+  position: absolute;
+  bottom: 16px;
+  font-size: 2rem;
+  animation: flicker 1.2s ease-in-out infinite alternate;
+}
+.flame-1 { left: 42%; animation-delay: 0s;    font-size: 2.8rem; }
+.flame-2 { left: 35%; animation-delay: 0.3s;  font-size: 1.8rem; }
+.flame-3 { left: 52%; animation-delay: 0.6s;  font-size: 1.6rem; }
+@keyframes flicker {
+  0%   { transform: scaleY(1)   rotate(-2deg); opacity: 0.9; }
+  100% { transform: scaleY(1.2) rotate(2deg);  opacity: 1; }
+}
+.bush {
+  position: absolute;
+  font-size: 2.4rem;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Fish animation */
+.anim-fish { background: linear-gradient(160deg, #B2EAE8 0%, #90CDF4 100%); }
+.fish {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: fishSwim 5s linear infinite;
+  opacity: 0;
+}
+.fish-1 { top: 35%; animation-delay: 0s; }
+.fish-2 { top: 55%; animation-delay: 1.8s; font-size: 1.1rem; }
+.fish-3 { top: 25%; animation-delay: 3.2s; font-size: 1.8rem; }
+@keyframes fishSwim {
+  0%   { transform: translateX(-80px) scaleX(1); opacity: 0; }
+  10%  { opacity: 1; }
+  49%  { transform: translateX(calc(100vw + 30px)) scaleX(1); opacity: 1; }
+  50%  { transform: translateX(calc(100vw + 30px)) scaleX(-1); opacity: 0; }
+  51%  { opacity: 0; }
+  100% { transform: translateX(-80px) scaleX(-1); opacity: 0; }
+}
+
+/* Cross animation */
+.anim-cross { background: linear-gradient(160deg, #FDE8EF 0%, #FDF0F5 100%); }
+.cross-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  animation: crossGlow 3s ease-in-out infinite;
+}
+.sparkle {
+  position: absolute;
+  font-size: 1.1rem;
+  animation: sparkleFloat 3s ease-in-out infinite;
+  opacity: 0;
+}
+.sp-1 { top: 20%; left: 20%; animation-delay: 0s;   }
+.sp-2 { top: 25%; right: 25%; animation-delay: 0.7s; }
+.sp-3 { top: 60%; left: 15%; animation-delay: 1.4s;  }
+.sp-4 { top: 65%; right: 15%; animation-delay: 2.1s; }
+@keyframes crossGlow {
+  0%, 100% { transform: translate(-50%,-50%) scale(1);    opacity: 0.8; }
+  50%       { transform: translate(-50%,-50%) scale(1.08); opacity: 1; }
+}
+@keyframes sparkleFloat {
+  0%   { opacity: 0; transform: scale(0.5) translateY(0); }
+  40%  { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.2) translateY(-20px); }
+}
+
+/* Crown animation */
+.anim-crown { background: linear-gradient(160deg, #FFE08A 0%, #FFF5D1 100%); }
+.crown-icon {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 3.8rem;
+  animation: crownBounce 2.5s ease-in-out infinite;
+}
+@keyframes crownBounce {
+  0%, 100% { transform: translate(-50%,-50%) rotate(-5deg) scale(1); }
+  50%       { transform: translate(-50%,-50%) rotate(5deg) scale(1.08); }
+}
+
+/* Sheep animation */
+.anim-sheep { background: linear-gradient(160deg, #E8F5E9 0%, #FFF8E7 100%); }
+.sheep {
+  position: absolute;
+  font-size: 1.7rem;
+  bottom: 16px;
+  animation: sheepWalk 6s ease-in-out infinite;
+}
+.sheep-1 { animation-delay: 0s;   font-size: 2.2rem; }
+.sheep-2 { animation-delay: 1.5s; font-size: 1.5rem; left: 20%; }
+.sheep-3 { animation-delay: 3s;   left: 65%; }
+@keyframes sheepWalk {
+  0%  { transform: translateX(0); }
+  25% { transform: translateX(12px); }
+  75% { transform: translateX(-12px); }
+  100%{ transform: translateX(0); }
+}
+.green-hill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: radial-gradient(ellipse 120% 80% at 50% 100%, var(--green-lt) 60%, transparent 100%);
+}
+
+/* Bread animation */
+.anim-bread { background: linear-gradient(160deg, #FFF3CD 0%, #FFE08A 100%); }
+.bread-icon {
+  position: absolute;
+  font-size: 2.2rem;
+  animation: breadFloat 3s ease-in-out infinite;
+}
+.bread-1 { top: 20%; left: 20%; animation-delay: 0s; }
+.bread-2 { top: 30%; left: 55%; animation-delay: 1s; font-size: 1.5rem; }
+.bread-3 { top: 50%; right: 20%; animation-delay: 2s; font-size: 2.8rem; }
+@keyframes breadFloat {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50%       { transform: translateY(-14px) rotate(5deg); }
+}
+
+/* Boat animation */
+.anim-boat { background: linear-gradient(160deg, #DBEAFE 0%, #D1FAE5 100%); }
+
+/* Story meta overlay content */
+.story-header-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.story-title-header {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(1.7rem, 5vw, 2.6rem);
+  color: var(--deep);
+  text-shadow: 0 1px 4px rgba(255,255,255,0.7);
+  margin-bottom: 6px;
+}
+.story-passage-ref {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-med);
+  background: rgba(255,255,255,0.75);
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+/* ─── Loading ────────────────────────────────────────── */
+.loading-state {
+  max-width: var(--max-w);
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.loading-state.hidden { display: none; }
+.spinner {
+  width: 52px;
+  height: 52px;
+  border: 5px solid var(--border);
+  border-top-color: var(--sky);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-state p {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.15rem;
+  color: var(--text-soft);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:0.6} 50%{opacity:1} }
+
+/* ─── Story Content ─────────────────────────────────── */
+.story-section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.story-section.hidden { display: none; }
+
+.story-text {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: clamp(24px,5vw,44px);
+  margin-top: 24px;
+  box-shadow: 0 2px 16px var(--shadow);
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  line-height: 1.85;
+  color: var(--text);
+}
+.story-text p { margin-bottom: 1.4em; }
+
+.lesson-box {
+  background: linear-gradient(135deg, var(--yellow-lt) 0%, #FFF8CD 100%);
+  border-left: 5px solid var(--yellow);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 22px 26px;
+  margin-top: 28px;
+}
+.lesson-box h3 {
+  font-size: 1.2rem;
+  color: #6B4A00;
+  margin-bottom: 8px;
+}
+.lesson-box p { color: #5A3D00; font-size: 1.05rem; }
+
+/* ─── Parent Section ────────────────────────────────── */
+.parent-section {
+  max-width: var(--max-w);
+  margin: 36px auto 0;
+  padding: 0 20px;
+}
+.parent-section.hidden { display: none; }
+
+.parent-header {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.6rem;
+  color: var(--deep);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.parent-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: clamp(20px,4vw,36px);
+  margin-bottom: 16px;
+  box-shadow: 0 2px 14px var(--shadow);
+}
+.parent-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prayer-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.prayer-list li {
+  background: var(--purple-lt);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text);
+  border-left: 4px solid var(--purple);
+}
+
+.context-card { background: var(--sky-light); }
+.context-card h3 { color: var(--deep); }
+
+.convo-card { background: var(--green-lt); }
+.convo-card h3 { color: #2E6B2E; }
+.convo-card p {
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #2E5A2E;
+}
+
+/* ─── Error State ────────────────────────────────────── */
+.error-state {
+  max-width: var(--max-w);
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.error-state.hidden { display: none; }
+.error-state p { color: var(--text-med); margin-bottom: 16px; }
+.retry-btn {
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.retry-btn:hover { transform: scale(1.04); }
+
+/* ─── Archive Page ───────────────────────────────────── */
+.page-hero {
+  background: linear-gradient(135deg, var(--sky-light) 0%, var(--yellow-lt) 100%);
+  padding: clamp(32px,6vw,60px) 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--border);
+}
+.page-hero h1 { color: var(--deep); margin-bottom: 8px; }
+.page-hero p { color: var(--text-med); font-size: 1.05rem; }
+
+.archive-filters {
+  max-width: var(--max-w);
+  margin: 28px auto 0;
+  padding: 0 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filter-label {
+  font-weight: 700;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+.filter-btn {
+  padding: 8px 18px;
+  border: 2px solid var(--border);
+  border-radius: 30px;
+  background: white;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-med);
+  transition: all 0.2s;
+}
+.filter-btn:hover { border-color: var(--sky); color: var(--deep); }
+.filter-btn.active { border-color: var(--sky); background: var(--sky-light); color: var(--deep); }
+
+.archive-grid {
+  max-width: var(--max-w);
+  margin: 24px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+  gap: 16px;
+}
+
+.archive-card {
+  background: var(--card);
+  border-radius: var(--radius-sm);
+  padding: 18px 16px;
+  box-shadow: 0 2px 10px var(--shadow);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: left;
+  border: 2px solid transparent;
+  display: block;
+}
+.archive-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--shadow);
+  border-color: var(--sky);
+  text-decoration: none;
+}
+.archive-date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.archive-card h3 {
+  font-size: 1.05rem;
+  color: var(--deep);
+  margin-bottom: 6px;
+}
+.archive-card .archive-age {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--sky-light);
+  color: var(--deep);
+  display: inline-block;
+}
+
+.empty-archive {
+  max-width: var(--max-w);
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+  color: var(--text-soft);
+}
+.empty-archive .empty-icon { font-size: 3rem; margin-bottom: 12px; }
+
+/* ─── Prayer Page ─────────────────────────────────────── */
+.prayer-grid {
+  max-width: var(--max-w);
+  margin: 32px auto 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prayer-day-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: clamp(20px,4vw,36px);
+  box-shadow: 0 2px 14px var(--shadow);
+}
+.prayer-day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.prayer-day-header h3 { color: var(--deep); font-size: 1.2rem; }
+.prayer-day-date {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-soft);
+  background: var(--border);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.no-prayers {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-soft);
+}
+.no-prayers .icon { font-size: 3.5rem; margin-bottom: 12px; }
+
+/* ─── About Page ─────────────────────────────────────── */
+.verse-banner {
+  background: linear-gradient(135deg, var(--deep) 0%, #2E86C1 100%);
+  color: white;
+  text-align: center;
+  padding: clamp(40px,8vw,80px) 20px;
+}
+.verse-banner blockquote {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(1.3rem,4vw,1.9rem);
+  line-height: 1.5;
+}
+.verse-ref {
+  margin-top: 12px;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.about-body {
+  max-width: var(--max-w);
+  margin: 44px auto;
+  padding: 0 20px;
+}
+.about-block {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: clamp(24px,5vw,44px);
+  margin-bottom: 24px;
+  box-shadow: 0 2px 14px var(--shadow);
+}
+.about-block h2 { color: var(--deep); margin-bottom: 14px; }
+
+/* ─── Thank-You Page ──────────────────────────────────── */
+.thankyou-wrap {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.thankyou-icon { font-size: 4.5rem; margin-bottom: 16px; }
+.thankyou-wrap h1 {
+  color: var(--deep);
+  font-size: clamp(1.9rem,5vw,2.6rem);
+  margin-bottom: 12px;
+}
+.thankyou-wrap .subtitle {
+  font-size: 1.1rem;
+  color: var(--text-med);
+  margin-bottom: 32px;
+}
+
+.trial-card {
+  background: var(--yellow-lt);
+  border: 2px solid var(--yellow);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+.trial-card h3 {
+  font-size: 1.15rem;
+  color: #7A5000;
+  margin-bottom: 12px;
+}
+.trial-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.98rem;
+  color: var(--text);
+}
+.trial-detail .icon { flex-shrink: 0; font-size: 1.1rem; }
+
+.cta-story {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--coral) 0%, #FF8C42 100%);
+  color: white;
+  padding: 16px 40px;
+  border-radius: 40px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 16px rgba(255,107,107,0.35);
+  transition: transform 0.15s;
+  text-decoration: none;
+}
+.cta-story:hover { transform: translateY(-2px); text-decoration: none; }
+
+/* ─── Utilities ──────────────────────────────────────── */
+.hidden { display: none !important; }
+
+.section-gap { margin-top: 48px; }
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--coral);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* ─── Responsive ──────────────────────────────────────── */
+@media (max-width: 600px) {
+  .nav-logo span.logo-text { display: none; }
+  .nav-logo { gap: 6px; }
+  .plan-toggle { flex-direction: column; }
+  .age-buttons { gap: 8px; }
+  .age-btn { padding: 10px 16px; font-size: 0.95rem; }
+  .archive-grid { grid-template-columns: 1fr 1fr; }
+  .night-indicator { font-size: 0.78rem; padding: 5px 10px; top: 70px; }
+}
+
+@media (max-width: 400px) {
+  .archive-grid { grid-template-columns: 1fr; }
+}

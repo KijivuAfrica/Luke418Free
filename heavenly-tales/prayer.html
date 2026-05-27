@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prayer Corner — Heavenly Tales</title>
+  <meta name="description" content="This week's prayer points for your child's spiritual growth." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-wrapper">
+
+  <!-- ── Night Indicator ──────────────────────────── -->
+  <div id="night-indicator" class="night-indicator hidden">
+    Night <span id="night-num">1</span> of 5 Free ✨
+  </div>
+
+  <!-- ── Navigation ───────────────────────────────── -->
+  <nav class="nav" role="navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-star">⭐</span>
+        <span class="logo-text">Heavenly Tales</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Tonight</a></li>
+        <li><a href="archive.html">Archive</a></li>
+        <li><a href="prayer.html" class="active">Prayers</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Hero ──────────────────────────────── -->
+  <header class="page-hero">
+    <h1>🙏 Parent Prayer Corner</h1>
+    <p>This week's prayer points — gathered from each night's story, written just for your family.</p>
+  </header>
+
+  <!-- ── Intro Card ─────────────────────────────── -->
+  <div style="max-width:780px;margin:32px auto 0;padding:0 20px;">
+    <div class="parent-card" style="background:linear-gradient(135deg,var(--purple-lt) 0%,var(--sky-light) 100%);border-left:5px solid var(--purple);">
+      <h3 style="color:var(--deep);">💜 How to use this page</h3>
+      <p style="font-size:1rem;color:var(--text-med);">
+        Each night's story comes with three prayer points written for your child's spiritual growth.
+        This page gathers this week's prayers in one place so you can pray over your child
+        throughout the week — at bedtime, at breakfast, whenever the Spirit leads.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Prayer Grid ────────────────────────────── -->
+  <main>
+    <div id="prayer-grid" class="prayer-grid"></div>
+
+    <div id="no-prayers" class="no-prayers hidden">
+      <div class="icon">🌿</div>
+      <h2>Your prayer corner is waiting.</h2>
+      <p style="color:var(--text-med);font-size:1rem;">
+        Read <a href="index.html">tonight's story</a> and your prayer points will appear here.<br>
+        Check back each night — this week's prayers will grow as you read.
+      </p>
+    </div>
+  </main>
+
+  <!-- ── Footer ────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer-verse">"The Spirit of the Lord is upon me…" — Luke 4:18</p>
+    <p>A ministry of <a href="https://luke418free.com" target="_blank" rel="noopener">luke418free.com</a></p>
+  </footer>
+
+  <script src="js/prayer.js"></script>
+</body>
+</html>

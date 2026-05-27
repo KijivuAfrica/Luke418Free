@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Story Archive — Heavenly Tales</title>
+  <meta name="description" content="Browse every Bible bedtime story you've read with your children." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-wrapper">
+
+  <!-- ── Night Indicator ──────────────────────────── -->
+  <div id="night-indicator" class="night-indicator hidden">
+    Night <span id="night-num">1</span> of 5 Free ✨
+  </div>
+
+  <!-- ── Navigation ───────────────────────────────── -->
+  <nav class="nav" role="navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-star">⭐</span>
+        <span class="logo-text">Heavenly Tales</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Tonight</a></li>
+        <li><a href="archive.html" class="active">Archive</a></li>
+        <li><a href="prayer.html">Prayers</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Hero ──────────────────────────────── -->
+  <header class="page-hero">
+    <h1>📚 Story Archive</h1>
+    <p>Every story you've shared with your child — ready to revisit any night.</p>
+  </header>
+
+  <!-- ── Filters ────────────────────────────────── -->
+  <div class="archive-filters">
+    <span class="filter-label">Age level:</span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="tiny">🌱 Tiny Ones</button>
+    <button class="filter-btn" data-filter="explorers">🔍 Explorers</button>
+    <button class="filter-btn" data-filter="seekers">⭐ Seekers</button>
+  </div>
+
+  <!-- ── Archive Grid ───────────────────────────── -->
+  <main>
+    <div id="archive-grid" class="archive-grid" role="list" aria-label="Story archive"></div>
+
+    <div id="empty-archive" class="empty-archive hidden">
+      <div class="empty-icon">📖</div>
+      <h2>No stories yet!</h2>
+      <p>Head to <a href="index.html">tonight's story</a> to read your first one.<br>
+      Each story you read will be saved here automatically.</p>
+    </div>
+  </main>
+
+  <!-- ── Story Modal ────────────────────────────── -->
+  <div id="story-modal" class="paywall-overlay hidden" role="dialog" aria-modal="true" style="align-items:flex-start; padding-top: 40px;">
+    <div class="paywall-card" style="max-width:680px; text-align:left; position:relative;">
+      <button id="modal-close" style="position:absolute;top:16px;right:20px;font-size:1.5rem;background:none;border:none;cursor:pointer;color:var(--text-soft);" aria-label="Close story">✕</button>
+
+      <div id="modal-story-header" style="margin-bottom:20px; text-align:center;">
+        <p id="modal-date" style="font-size:0.85rem;font-weight:700;color:var(--text-soft);margin-bottom:4px;"></p>
+        <h2 id="modal-title" style="color:var(--deep);"></h2>
+        <span id="modal-passage" class="story-passage-ref"></span>
+      </div>
+
+      <div id="modal-text" class="story-text" style="box-shadow:none;padding:0;background:transparent;margin:0 0 20px;"></div>
+
+      <div class="lesson-box" style="margin-top:0;">
+        <h3>✨ Tonight's Lesson</h3>
+        <p id="modal-lesson"></p>
+      </div>
+
+      <details style="margin-top:20px;">
+        <summary style="cursor:pointer;font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--deep);padding:10px 0;">
+          💜 Parent Resources
+        </summary>
+        <div style="margin-top:14px;">
+          <h3 style="font-size:1rem;margin-bottom:10px;">🙏 Prayer Points</h3>
+          <ul class="prayer-list" id="modal-prayers"></ul>
+          <h3 style="font-size:1rem;margin:16px 0 8px;">📖 Biblical Context</h3>
+          <p id="modal-context" style="font-size:0.97rem;color:var(--text-med);"></p>
+          <h3 style="font-size:1rem;margin:16px 0 8px;">💬 Conversation Starter</h3>
+          <p id="modal-convo" style="font-size:1rem;font-weight:600;font-style:italic;color:#2E5A2E;"></p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- ── Footer ────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer-verse">"The Spirit of the Lord is upon me…" — Luke 4:18</p>
+    <p>A ministry of <a href="https://luke418free.com" target="_blank" rel="noopener">luke418free.com</a></p>
+  </footer>
+
+  <script src="js/archive.js"></script>
+</body>
+</html>
